@@ -4,12 +4,12 @@ Desenvolva uma função determina_tipo_triangulo que recebe três lados de um tr
 """
 
 def determina_tipo_triangulo(l1, l2, l3):
-    if l1 == l2 == l3:
+    if not((l1 + l2) > l3 and (l1 + l3) > l2 and (l2 + l3) > l1):
+        return "Não é um triângulo"
+    elif l1 == l2 == l3:
         return "Equilátero"
     elif l1 == l2 or l1 == l3 or l2 == l3:
         return "Isósceles"
-    elif not((l1 + l2) > l3 and (l1 + l3) > l2 and (l2 + l3) > l1):
-        return "Não é um triângulo"
     else:
         return "Escaleno"
 
@@ -74,7 +74,7 @@ def calculadora():
 
 
 def main():
-    print(determina_tipo_triangulo(17, 17, 19))
+    print(determina_tipo_triangulo(3, 3, 4))
     print(dia_semana(5))
     print(calculadora())
 
